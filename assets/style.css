@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    --main-color:hsl(0, 0%, 100%);
+    --main-background: hsl(222, 26%, 31%);
+    --togl-kp-bg:hsl(223, 31%, 20%);
+    --scr-bg:hsl(224, 36%, 15%);
+
+    --text-white:hsl(0, 0%, 100%);
+    --key-text:hsl(221, 14%, 31%);
+
+    --scr-text:hsl(0, 0%, 100%);
+
+    /* key */
+
+    --result-key:hsl(6, 63%, 50%);
+    --result-key-shadow:hsl(6, 70%, 34%);
+
+    --clear-key: hsl(225, 21%, 49%);
+    --clear-key-shadow: hsl(224, 28%, 35%);
+
+    --org-key:hsl(30, 25%, 89%);
+    --org-key-shadow:hsl(28, 16%, 65%);
+
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.theme2{
+    --main-color:hsl(60, 10%, 19%);
+    --main-background: hsl(0, 0%, 90%);
+    --togl-kp-bg:hsl(0, 5%, 81%);
+    --scr-bg:hsl(0, 0%, 93%);
+
+    --text-white:hsl(0, 0%, 100%);
+    --key-text:hsl(60, 10%, 19%);
+
+    --scr-text:hsl(60, 10%, 19%);
+
+    /* key */
+
+    --clear-key:hsl(185, 42%, 37%);
+    --clear-key-shadow:hsl(185, 58%, 25%);
+
+    --result-key: hsl(25, 98%, 40%);
+    --result-key-shadow: hsl(25, 99%, 27%);
+
+    --org-key:hsl(45, 7%, 89%);
+    --org-key-shadow:hsl(35, 11%, 61%);
+}
+body.theme3{
+    --main-color:hsl(52, 100%, 62%);
+    --main-background: hsl(268, 75%, 9%);
+    --togl-kp-bg:hsl(268, 71%, 12%);
+    --scr-bg:hsl(268, 71%, 12%);
+
+    --text-white:hsl(0, 0%, 100%);
+    --key-text:hsl(52, 100%, 62%);
+
+    --scr-text:hsl(52, 100%, 62%);
+
+    /* key */
+
+    --result-key: hsl(281, 89%, 26%);
+    --result-key-shadow:hsl(285, 91%, 52%);
+
+    --clear-key: hsl(176, 100%, 44%);
+    --clear-key-shadow:  hsl(177, 92%, 70%);
+
+    --org-key: hsl(268, 47%, 21%);
+    --org-key-shadow:hsl(290, 70%, 36%);
+}
+
+
+
+
+html{
+    font-size: 62%;
+    font-family: sans-serif;
+}
+.container{
+    max-width:450px;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+h1{
+    color: var(--main-color);
+}
+h3{
+    color: var(--main-color);
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.change{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nums{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: 4px;
+    color: var(--main-color);
+    width: 40px;
+    gap: 10px;
+    font-size: 10px;
+}
+.radios{
+    display: flex;
+    justify-content: space-around;
+    padding: 3px;
+    width: 50px;
+    background-color: var(--scr-bg);
+    border-radius: 14px;
+}
+.theme{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color:inherit
+}
+.theme.active{
+    background-color: var(--result-key);
+}
+
+.screen{
+    width: 100%;
+    padding: 16px;
+    font-size: 46px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background: var(--scr-bg);
+    color: var(--scr-text);
+    text-align: end;
+    outline: none;
+    pointer-events: none;
+}
+
+.calculator-btns{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    border-radius: 10px;
+    background-color: var(--togl-kp-bg);
+
+}
+.btn{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color: var(--key-text);
+    background: var(--org-key);
+    box-shadow: 0 3px var(--org-key-shadow);
+}
+.btn:hover:not(.delete,.reset,.result){
+    background-color: var(--text-white);
+}
+.delete{
+    font-size: 18px;
+    color: var(--text-white);
+    background-color: var(--clear-key);
+    box-shadow:  0 3px var(--clear-key-shadow);
+}
+.reset{
+    color: var(--text-white);
+    background-color: var(--clear-key);
+    box-shadow:  0 3px var(--clear-key-shadow);
+    font-size: 18px;
+    grid-column: span 2;
+}
+.result{
+    color: var(--text-white);
+    background-color: var(--result-key);
+    box-shadow:  0 3px var(--result-key-shadow);
+    grid-column: span 2;
+}
